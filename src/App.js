@@ -1,12 +1,24 @@
 import Cards from './components/CARDS/Cards.jsx';
 import Nav from './components/NAV/Nav.jsx';
-import { useState } from 'react';
-import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from "react-router-dom";
 import About from './components/ABOUT/About.jsx';
 import Detail from "./components/DETAIL/Detail.jsx";
+import { Form } from 'react-router-dom';
 
 function App () {
  const [characters, setCharacters] = useState([]);
+ const { pathname } = useLocation();
+ const [access, setAccess] = useState(false);
+ const navigate = useNavigate();
+
+ useEffect(() => {
+  !access && navigate("/");
+}, [access]);
+
+// ! CREDENCIALES FAKE
+const username = "sparra@mail.com";
+const password = "mipass123";
 
 const onSearch = (id) => {
   const URL_BASE = "https://be-a-rym.up.railway.app/api";
@@ -35,9 +47,18 @@ setCharacters((oldChars) => [...oldChars, data]);
   //te va a dar una array sin el persona que tenia el id que pase ocmo parametro
   };
 
+  const login = (userData) => {
+    if (userData.username === username && userData.password === password) {
+      setAccess(true);
+      navigate("/home");
+    } else {
+      alert("Credenciales incorrectas");
+    }
+  };
+  
   return (
-     <div>
-        <Nav onSearch={onSearch} />
+     <div className='App' style={{ padding: '25px' }}>
+ {pathname !== "/" && <Nav onSearch={onSearch} />}
         <Routes>
 <Route 
 path="/home" 
