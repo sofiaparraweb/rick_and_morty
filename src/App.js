@@ -1,10 +1,10 @@
 import Cards from './components/CARDS/Cards.jsx';
 import Nav from './components/NAV/Nav.jsx';
 import { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from './components/ABOUT/About.jsx';
 import Detail from "./components/DETAIL/Detail.jsx";
-import { Form } from 'react-router-dom';
+// import { Form } from 'react-router-dom';
 
 function App () {
  const [characters, setCharacters] = useState([]);

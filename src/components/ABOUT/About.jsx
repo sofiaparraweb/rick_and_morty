@@ -8,7 +8,7 @@ class About extends React.Component {
     render() {
         return(
             <>
-            <h1>Me llamo Sofia</h1>
+            <h1>Mi nombre es Sofia Parra, tengo 22 años y vivo en Tucumán!</h1>
             </>
         )
     }

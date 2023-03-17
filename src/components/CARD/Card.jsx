@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import style from "./Card.modules.css";
+import style from "./Card.modules.css"
 
 export default function Card({id, name, species, gender, image, onClose}) {
    //antes habia un "props" dnde esta ese objeto, pero como 
