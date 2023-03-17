@@ -2,12 +2,14 @@
     border: 0px;
     border-radius: 15px 0px 0px 15px;
     height: 12em;
+    background-color: azure;
 }
 
 .searchButton {
     border: 0px;
     border-radius: 0px 15px 15px 0px;
     height: 12em;
+    background-color: beige;
 }
 
 .bar {

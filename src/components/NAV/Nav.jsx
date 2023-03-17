@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-;import SearchBar from "../SEARCHBAR/SearchBar";
+import SearchBar from "../SEARCHBAR/SearchBar";
 
 class Nav extends React.Component {
     constructor(props) {
@@ -11,12 +11,12 @@ class Nav extends React.Component {
         return (
             <div>
                 <SearchBar onSearch={this.props.onSearch} />
-<link to="/about">
+<Link to="/about">
     <h3>ABOUT</h3>
-    </link>
-    <link to="/home">
+    </Link>
+    <Link to="/home">
     <h3>HOME</h3>
-    </link>
+    </Link>
             </div>
         );
     }

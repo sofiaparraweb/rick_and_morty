@@ -10,11 +10,11 @@ export default function Card({id, name, species, gender, image, onClose}) {
          <button onClick={() => onClose(id)} className={style.closeButton}>
             X
             </button>
-         <link to={`./detail/${id}`}>
+         <Link to={`/detail/${id}`}>
          <h2>Name: {name} </h2>
-         </link>
+         </Link>
 
-         <img  src={image} alt="" /> 
+         <img src={image} alt="" /> 
 
          <h2>Species: {species}</h2>
          <h2>Gender: {gender} </h2>
@@ -22,20 +22,3 @@ export default function Card({id, name, species, gender, image, onClose}) {
    );
 };
 
-
-/*
-OTRA OPCION SIN HACER DESTRUCTURING
-export default function Card(props) {
-   
-   return (
-      <div>
-         <button onClick={onClose}>X</button>
-         <h2>Name: {props.name}</h2>
-         <h2>Species: {props.species}</h2>
-         <h2>Gender: {props.gender} </h2>
-         <img  src={image} alt="" /> 
-      </div>
-   );
-}
-
-*/
