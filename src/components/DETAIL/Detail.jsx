@@ -21,7 +21,7 @@ const Detail = () => {
         window.alert("No hay personajes con ese ID");
       });
     return setCharacter({});
-  }, [id]);
+  }, [character.id]);
 
   /*useEffect(() => {
     const URL_BASE = "https://be-a-rym.up.railway.app/api";

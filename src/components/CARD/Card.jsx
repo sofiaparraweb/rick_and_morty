@@ -3,7 +3,6 @@ import style from "./Card.modules.css"
 import { connect } from "react-redux";
 import { Dispatch, useState } from "react";
 import { addFavorite, deleteFavorite } from "../../redux/actions";
-import { useState } from "react";
 import { useEffect } from "react";
 
 function Card({
@@ -14,7 +13,8 @@ function Card({
    image, 
    onClose,
    addFavorite,
-   deleteFavorite  
+   deleteFavorite, 
+   myFavorites
 }) {
    //antes habia un "props" dnde esta ese objeto, pero como 
    //yo se que ese props es un objeto con distintas propiedades,
@@ -44,7 +44,7 @@ function Card({
 
       useEffect(() => {
          myFavorites.forEach((fav) => {
-            if (fav.id === props.id) {
+            if (fav.id === id) {
                setIsFav(true);
             }
          });

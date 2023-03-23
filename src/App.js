@@ -5,6 +5,7 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from './components/ABOUT/About.jsx';
 import Detail from "./components/DETAIL/Detail.jsx";
 import Favorites from './components/FAVORITES/Favorites.jsx';
+import Form from "./components/FORM/Form.jsx";
 // import { Form } from 'react-router-dom';
 
 function App () {
@@ -83,4 +84,4 @@ element={<Detail/>}
   )
 };
 
-export default App
+export default App;
