@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from './components/ABOUT/About.jsx';
 import Detail from "./components/DETAIL/Detail.jsx";
+import Favorites from './components/FAVORITES/Favorites.jsx';
 // import { Form } from 'react-router-dom';
 
 function App () {
@@ -17,8 +18,8 @@ function App () {
 }, [access]);
 
 // ! CREDENCIALES FAKE
-const username = "sparra@mail.com";
-const password = "mipass123";
+const username = "sofiparra44@gmail.com";
+const password = "sofipa123";
 
 const onSearch = (id) => {
   const URL_BASE = "https://be-a-rym.up.railway.app/api";
@@ -36,7 +37,7 @@ setCharacters((oldChars) => [...oldChars, data]);
 //funcion callback q recibe el estado viejo y 
 //lo une con lo nuevo, creando el estado nuevo
       } else {
-        alert("Persona no vino")
+        window.alert("Persona no vino")
       }
     });
   };
@@ -60,6 +61,7 @@ setCharacters((oldChars) => [...oldChars, data]);
      <div className='App' style={{ padding: '25px' }}>
  {pathname !== "/" && <Nav onSearch={onSearch} />}
         <Routes>
+<Route path="/" element={<Form login={login} />} />
 <Route 
 path="/home" 
 element={<Cards characters={characters} onClose={onClose} />}
@@ -67,6 +69,10 @@ element={<Cards characters={characters} onClose={onClose} />}
 <Route
 path='/about'
 element={<About />}
+/>
+<Route
+path='/favorites'
+element={<Favorites />}
 />
 <Route
 path='/detail/:detailId'

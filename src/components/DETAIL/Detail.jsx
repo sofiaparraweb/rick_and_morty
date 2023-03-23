@@ -8,6 +8,22 @@ const Detail = () => {
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
+    fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
+      .then((response) => response.json())
+      .then((char) => {
+        if (char.name) {
+          setCharacter(char);
+        } else {
+          window.alert("No hay personajes con ese ID");
+        }
+      })
+      .catch((err) => {
+        window.alert("No hay personajes con ese ID");
+      });
+    return setCharacter({});
+  }, [id]);
+
+  /*useEffect(() => {
     const URL_BASE = "https://be-a-rym.up.railway.app/api";
     const KEY = "3698fc44c52e.628564e7536696b74288";
 
@@ -15,6 +31,7 @@ const Detail = () => {
       setCharacter(response.data)
     );
   }, []);
+  */
 
   return (
     <div>
@@ -30,8 +47,20 @@ const Detail = () => {
       ) : (
         <h3>Loading...</h3>
       )}
+      <button>
+     
+      </button>
     </div>
   );
 };
 
 export default Detail;
+
+/**
+ * ### **👩‍💻 EJERCICIO 7**
+
+Crea un botón en el componente `<Detail />` que te permita 
+regresar a "`/home`".
+
+<br />
+ */
